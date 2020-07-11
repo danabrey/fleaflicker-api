@@ -1,0 +1,211 @@
+{
+  "leagues": [
+    {
+      "id": 209741,
+      "name": "Area 51",
+      "logoUrl": "https://s3.amazonaws.com/fleaflicker/l209741_0_150x150.jpg",
+      "ownedTeam": {
+        "id": 1387320,
+        "name": "Antonio Brown Can Go Yuck Fimself",
+        "recordOverall": {
+          "winPercentage": {
+            "formatted": ".000"
+          },
+          "formatted": "0-0"
+        },
+        "recordDivision": {
+          "winPercentage": {
+            "formatted": ".000"
+          },
+          "rank": 2,
+          "formatted": "0-0"
+        },
+        "recordPostseason": {
+          "winPercentage": {
+            "formatted": ".000"
+          },
+          "rank": 3,
+          "formatted": "0-0"
+        },
+        "pointsFor": {
+          "formatted": "0"
+        },
+        "pointsAgainst": {
+          "formatted": "0"
+        },
+        "streak": {
+          "formatted": "-"
+        },
+        "waiverAcquisitionBudget": {
+          "value": 100.0,
+          "formatted": "$100"
+        },
+        "newItemCounts": {
+          "activityUnread": 255,
+          "messagesUnread": 24
+        },
+        "initials": "AB"
+      },
+      "activeForCurrentSeason": true,
+      "draftStatus": "POST_DRAFT",
+      "membershipType": "MEMBER",
+      "rosterRequirements": {
+        "positions": [
+          {
+            "label": "QB",
+            "group": "START",
+            "eligibility": [
+              "QB"
+            ],
+            "min": 2,
+            "max": 30,
+            "start": 1,
+            "colors": [
+              "DRAFT_BOARD_RED"
+            ]
+          },
+          {
+            "label": "RB",
+            "group": "START",
+            "eligibility": [
+              "RB"
+            ],
+            "min": 4,
+            "max": 30,
+            "start": 2,
+            "colors": [
+              "DRAFT_BOARD_GREEN"
+            ]
+          },
+          {
+            "label": "WR",
+            "group": "START",
+            "eligibility": [
+              "WR"
+            ],
+            "min": 4,
+            "max": 30,
+            "start": 3,
+            "colors": [
+              "DRAFT_BOARD_BLUE"
+            ]
+          },
+          {
+            "label": "TE",
+            "group": "START",
+            "eligibility": [
+              "TE"
+            ],
+            "min": 1,
+            "max": 30,
+            "start": 1,
+            "colors": [
+              "DRAFT_BOARD_YELLOW"
+            ]
+          },
+          {
+            "label": "RB/WR/TE",
+            "group": "START",
+            "eligibility": [
+              "RB",
+              "WR",
+              "TE"
+            ],
+            "start": 1,
+            "colors": [
+              "DRAFT_BOARD_GREEN",
+              "DRAFT_BOARD_BLUE",
+              "DRAFT_BOARD_YELLOW"
+            ]
+          },
+          {
+            "label": "QB/RB/WR/TE",
+            "group": "START",
+            "eligibility": [
+              "QB",
+              "RB",
+              "WR",
+              "TE"
+            ],
+            "start": 1,
+            "colors": [
+              "DRAFT_BOARD_RED",
+              "DRAFT_BOARD_GREEN",
+              "DRAFT_BOARD_BLUE",
+              "DRAFT_BOARD_YELLOW"
+            ]
+          },
+          {
+            "label": "IR",
+            "group": "INJURED",
+            "eligibility": [
+              "QB",
+              "RB",
+              "WR",
+              "TE",
+              "K",
+              "P",
+              "D/ST",
+              "CB",
+              "S",
+              "EDR",
+              "DE",
+              "IL",
+              "DT",
+              "LB",
+              "LB"
+            ],
+            "start": 3,
+            "colors": [
+              "DRAFT_BOARD_RED",
+              "DRAFT_BOARD_GREEN",
+              "DRAFT_BOARD_BLUE",
+              "DRAFT_BOARD_YELLOW",
+              "DRAFT_BOARD_GRAY",
+              "DRAFT_BOARD_GRAY",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE",
+              "DRAFT_BOARD_PURPLE"
+            ]
+          },
+          {
+            "label": "BN",
+            "max": 31
+          }
+        ],
+        "rosterSize": 40,
+        "starterCount": 9,
+        "benchCount": 31,
+        "reserveCount": 3,
+        "eligibility": [
+          "QB",
+          "RB",
+          "WR",
+          "TE"
+        ]
+      },
+      "waiverType": "BLIND_BID",
+      "maxKeepers": 30,
+      "inviteUrl": "https://www.fleaflicker.com/nfl/leagues/209741/invited?eh=55904b70",
+      "defaultWaiverBudget": 100,
+      "size": 12,
+      "capacity": 12,
+      "initials": "A5",
+      "description": "12-Team 30-Keeper",
+      "chatChannel": "/chats/NFL/leagues/209741/all"
+    }
+  ],
+  "season": 2020,
+  "canCreateNew": true,
+  "newItemCounts": [
+    {
+      "count": 279
+    }
+  ]
+}
