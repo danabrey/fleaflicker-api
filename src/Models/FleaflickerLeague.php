@@ -3,6 +3,14 @@ namespace DanAbrey\FleaflickerApi\Models;
 
 final class FleaflickerLeague
 {
-    public string $id;
+    public int $id;
     public string $name;
+    /**
+     * @var FleaflickerLeagueRosterRequirements
+     */
+    public FleaflickerLeagueRosterRequirements $rosterRequirements;
+    /**
+     * @var FleaflickerTeam
+     */
+    public FleaflickerTeam $ownedTeam;
 }
