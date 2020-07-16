@@ -5,8 +5,8 @@ final class FleaflickerLeagueRosterPosition
 {
     public string $label;
     public string $group;
-    public array $eligibility;
-    public int $min;
-    public int $max;
-    public int $start;
+    public array $eligibility = [];
+    public ?int $min = null;
+    public ?int $max = null;
+    public ?int $start = null;
 }
