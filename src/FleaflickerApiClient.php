@@ -76,7 +76,7 @@ final class FleaflickerApiClient
 
         $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer(null, null, null, new PhpDocExtractor())];
         $serializer = new Serializer($normalizers);
-        return $serializer->denormalize($response['leagues'], FleaflickerLeague::class . '[]');
+        return $serializer->denormalize($response['leagues'] ?? [], FleaflickerLeague::class . '[]');
     }
 
     /**
@@ -95,6 +95,6 @@ $url = $this->getUrl('FetchLeagueRosters', $arguments);
 
         $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer(null, null, null, new PhpDocExtractor())];
         $serializer = new Serializer($normalizers);
-        return $serializer->denormalize($response['rosters'], FleaflickerRoster::class . '[]');
+        return $serializer->denormalize($response['rosters'] ?? [], FleaflickerRoster::class . '[]');
     }
 }
