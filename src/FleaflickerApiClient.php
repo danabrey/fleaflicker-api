@@ -26,7 +26,10 @@ final class FleaflickerApiClient
     {
         $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer()];
         $this->serializer = new Serializer($normalizers);
-        $this->httpClient = HttpClient::create();
+        // Fleaflicker's WAF blocks the HTTP/2 fingerprint produced by some
+        // libcurl builds (e.g. the Heroku PHP buildpack) on data-heavy
+        // endpoints like FetchLeagueRosters. Forcing HTTP/1.1 avoids it.
+        $this->httpClient = HttpClient::create(['http_version' => '1.1']);
     }
 
     protected function getArgumentsForUrl(array $arguments = []): string
