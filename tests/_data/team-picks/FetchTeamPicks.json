@@ -1,0 +1,7 @@
+{
+  "picks": [
+    {"ownedBy": {"id": 1387301, "name": "Swamp Cats", "initials": "SC"}, "slot": {"round": 1, "slot": 9, "overall": 9}, "season": 2027},
+    {"ownedBy": {"id": 1388598, "name": "Make Make America Gronk Again Gronk Again", "initials": "MM"}, "originalOwner": {"id": 1387301, "name": "Swamp Cats", "initials": "SC"}, "slot": {"round": 2, "slot": 9, "overall": 21}, "traded": true, "season": 2027, "lost": true},
+    {"ownedBy": {"id": 1387301, "name": "Swamp Cats", "initials": "SC"}, "slot": {"round": 1, "slot": 9, "overall": 9}, "season": 2028}
+  ]
+}

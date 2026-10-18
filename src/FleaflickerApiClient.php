@@ -2,6 +2,7 @@
 
 namespace DanAbrey\FleaflickerApi;
 
+use DanAbrey\FleaflickerApi\Models\FleaflickerDraftPick;
 use DanAbrey\FleaflickerApi\Models\FleaflickerLeague;
 use DanAbrey\FleaflickerApi\Models\FleaflickerRoster;
 use DanAbrey\FleaflickerApi\Models\FleaflickerTeam;
@@ -99,5 +100,28 @@ $url = $this->getUrl('FetchLeagueRosters', $arguments);
         $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer(null, null, null, new PhpDocExtractor())];
         $serializer = new Serializer($normalizers);
         return $serializer->denormalize($response['rosters'] ?? [], FleaflickerRoster::class . '[]');
+    }
+
+    /**
+     * Picks owned by the team, plus picks the team originally owned but has traded away (flagged `lost`)
+     *
+     * @param int $leagueId
+     * @param int $teamId
+     * @return array|FleaflickerDraftPick[]
+     * @throws \Symfony\Component\Serializer\Exception\ExceptionInterface
+     */
+    public function teamPicks(int $leagueId, int $teamId): array
+    {
+        $arguments = [
+            'sport' => 'NFL',
+            'league_id' => $leagueId,
+            'team_id' => $teamId,
+        ];
+
+        $response = $this->makeRequest('GET', $this->getUrl('FetchTeamPicks', $arguments));
+
+        $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer(null, null, null, new PhpDocExtractor())];
+        $serializer = new Serializer($normalizers);
+        return $serializer->denormalize($response['picks'] ?? [], FleaflickerDraftPick::class . '[]');
     }
 }

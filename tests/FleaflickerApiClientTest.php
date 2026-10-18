@@ -1,6 +1,7 @@
 <?php
 
 use DanAbrey\FleaflickerApi\FleaflickerApiClient;
+use DanAbrey\FleaflickerApi\Models\FleaflickerDraftPick;
 use DanAbrey\FleaflickerApi\Models\FleaflickerLeague;
 use DanAbrey\FleaflickerApi\Models\FleaflickerLeagueRosterPosition;
 use DanAbrey\FleaflickerApi\Models\FleaflickerLeagueRosterRequirements;
@@ -65,5 +66,26 @@ class FleaflickerApiClientTest extends TestCase
         $this->assertEquals(12929, $rosters[1]->players[4]->proPlayer->id);
         $this->assertIsArray($rosters[1]->players[4]->proPlayer->externalIds);
         $this->assertEquals('8960d61e-433b-41ea-a7ad-4e76be87b582', $rosters[1]->players[4]->proPlayer->externalIds[0]->id);
+    }
+
+    public function testTeamPicks()
+    {
+        $data = file_get_contents(__DIR__ . '/_data/team-picks/FetchTeamPicks.json');
+        $this->client->setHttpClient(new MockHttpClient([new MockResponse($data)]));
+        $picks = $this->client->teamPicks(111, 1387301);
+        $this->assertCount(3, $picks);
+        $this->assertInstanceOf(FleaflickerDraftPick::class, $picks[0]);
+        $this->assertEquals(2027, $picks[0]->season);
+        $this->assertEquals(1, $picks[0]->slot->round);
+        $this->assertEquals(9, $picks[0]->slot->slot);
+        $this->assertEquals(1387301, $picks[0]->ownedBy->id);
+        $this->assertNull($picks[0]->originalOwner);
+        $this->assertFalse($picks[0]->traded);
+        $this->assertFalse($picks[0]->lost);
+
+        $this->assertTrue($picks[1]->traded);
+        $this->assertTrue($picks[1]->lost);
+        $this->assertEquals(1388598, $picks[1]->ownedBy->id);
+        $this->assertEquals(1387301, $picks[1]->originalOwner->id);
     }
 }
